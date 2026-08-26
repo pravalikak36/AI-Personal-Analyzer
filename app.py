@@ -10,8 +10,8 @@ load_dotenv()
 
 auth = [
     (
-        os.getenv("KIRAN_USERNAME"),
-        os.getenv("KIRAN_PASSWORD")
+        os.getenv("kanha_USERNAME"),
+        os.getenv("kanha_PASSWORD")
     ),
     (
         os.getenv("CHINNU_USERNAME"),
@@ -180,8 +180,8 @@ with gr.Blocks(
         )
 
         partner = gr.Dropdown(
-            choices=["Kiran", "Chinnu"],
-            value="Kiran",
+            choices=["kanha", "Chinnu"],
+            value="kanha",
             label="Who are you?"
         )
 
