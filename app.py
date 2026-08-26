@@ -97,11 +97,51 @@ body {
     }
 }
 """
+#API call
+def chat_from_ui(message, history, partner, mode):
+
+    history = history or []
+
+    # Make sure history is in the format the backend expects
+    clean_history = []
+
+    for h in history:
+        if isinstance(h, dict):
+            clean_history.append({
+                "role": h["role"],
+                "content": h["content"]
+            })
+        else:
+            clean_history.append({
+                "role": h.role,
+                "content": h.content
+            })
+
+    # Backend streams only the assistant text
+    for response in chat(
+        message,
+        clean_history,
+        partner,
+        mode
+    ):
+
+        yield (
+    clean_history + [
+        {
+            "role": "user",
+            "content": message
+        },
+        {
+            "role": "assistant",
+            "content": response
+        }
+    ],
+    ""
+)
 
 #Gradio ui
 with gr.Blocks(
     title="Our Little Space",
-    css=css
 ) as demo:
 
     with gr.Column(elem_id="app-content"):
@@ -142,16 +182,24 @@ with gr.Blocks(
         chatbot = gr.Chatbot(
             height=500,
             placeholder="Your conversation will appear here...",
-            elem_id="chat-area"
+            elem_id="chat-area",
         )
 
         textbox = gr.Textbox(
             placeholder="Tell me what's happening...",
             show_label=False,
-            elem_id="message-box"
+            elem_id="message-box",
+            lines=1
+        )
+
+        textbox.submit(
+            chat_from_ui,
+            inputs=[textbox, chatbot, partner, mode],
+            outputs=[chatbot,textbox]
         )
 
 demo.launch(
+    css=css,
     auth=[
         ("kiran", "kiran"),
         ("chinnu", "chinnu")
