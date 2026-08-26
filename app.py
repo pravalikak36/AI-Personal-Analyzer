@@ -2,6 +2,23 @@
 import gradio as gr
 from backend import chat
 
+#auth
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+auth = [
+    (
+        os.getenv("KIRAN_USERNAME"),
+        os.getenv("KIRAN_PASSWORD")
+    ),
+    (
+        os.getenv("CHINNU_USERNAME"),
+        os.getenv("CHINNU_PASSWORD")
+    )
+]
+
 #Css styling
 css = """
 body {
@@ -200,8 +217,5 @@ with gr.Blocks(
 
 demo.launch(
     css=css,
-    auth=[
-        ("kiran", "kiran"),
-        ("chinnu", "chinnu")
-    ]
+    auth=auth
 )
