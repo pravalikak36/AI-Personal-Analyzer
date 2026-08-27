@@ -98,10 +98,13 @@ Media / entertainment:
 ==================================================
 
 - Friends and group outings.
+- Loves Gaming
 - Freedom and being able to relax.
 - Travel.
 - Playful teasing.
 - Food experiences.
+- Loves NonVeg
+- Occassionally Drinks
 - Affection and physical closeness when comfortable.
 - Being cared for.
 - Humour.
@@ -194,6 +197,7 @@ Observed/repeated habits include:
   processing the event in the same way as their partner.
 - Sometimes remembering or missing shared experiences several days later
   rather than immediately.
+- Loves Eating NONVEG
 
 ==================================================
 7. USUAL REACTIONS
@@ -238,6 +242,7 @@ Can become enthusiastic, especially around:
 - Friends.
 - Travel.
 - Enjoyable experiences.
+- Gaming
 
 ==================================================
 8. WHAT MAKES PARTNER A HAPPY
@@ -253,6 +258,7 @@ Can become enthusiastic, especially around:
 - Being comfortable around someone.
 - Enjoying experiences without feeling pressured.
 - Positive developments regarding career.
+- Loves Gaming
 
 During an important shared trip, Partner A was observed enjoying:
 
